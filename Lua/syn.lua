@@ -10,3 +10,10 @@ WebSocket.OnMessage:Connect(function(Msg)
         WebSocket:Send("[x] " .. tostring(err))
     end
 end)
+hookfunction(print, function(x)
+    WebSocket:Send("[i] " .. tostring(x))
+end)
+
+hookfunction(warn, function(x)
+    WebSocket:Send("[w] " .. tostring(x))
+end)
